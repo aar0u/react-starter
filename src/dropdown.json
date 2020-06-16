@@ -1,0 +1,38 @@
+[
+    {
+        "key": "af",
+        "value": "af",
+        "text": "Afghanistan",
+        "icon": "searchengin"
+    },
+    {
+        "key": "ax",
+        "value": "ax",
+        "text": "Aland Islands",
+        "icon": "searchengin"
+    },
+    {
+        "key": "al",
+        "value": "al",
+        "text": "Albania",
+        "icon": "searchengin"
+    },
+    {
+        "key": "dz",
+        "value": "dz",
+        "text": "Algeria",
+        "icon": "searchengin"
+    },
+    {
+        "key": "as",
+        "value": "as",
+        "text": "American Samoa",
+        "icon": "searchengin"
+    },
+    {
+        "key": "ad",
+        "value": "ad",
+        "text": "Andorra",
+        "icon": "searchengin"
+    }
+]

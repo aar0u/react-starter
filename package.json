@@ -4,7 +4,9 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "parcel ./src/index.html"
+        "start": "parcel ./src/index.html",
+        "build": "parcel build ./src/index.html",
+        "watch": "parcel watch ./src/index.html --out-dir C:\\src\\demo-spring-boot\\target\\classes\\public"
     },
     "devDependencies": {
         "@babel/core": "^7.10.2",
@@ -15,6 +17,7 @@
     "dependencies": {
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
         "semantic-ui-css": "^2.4.1",
         "semantic-ui-react": "^0.88.2"
     }

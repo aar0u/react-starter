@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 const LoginForm = () => {
-  const [passwordOds, setPasswordOds] = useState('password');
-  const [passwordNep, setPasswordNep] = useState('abcd1234');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
+  let history = useHistory();
 
   async function handleSubmit() {
-    const rawResponse = await fetch('http://localhost:8080/pwd', {
+    const rawResponse = await fetch(window.env.API + '/pwd', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ passwordOds, passwordNep })
+      body: JSON.stringify({ password1, password2 })
     });
 
     const content = await rawResponse.json();
     console.log(content.status)
     if (content.status === 100) {
-      console.log('11')
-      window.location.href = 'http://localhost:8080/test';
+      history.replace("/report");
     }
   }
 
@@ -31,15 +32,10 @@ const LoginForm = () => {
         </Header>
         <Form size='large'>
           <Segment stacked>
-            <Form.Input fluid icon='lock' iconPosition='left' placeholder='ODS Password' value={passwordOds}
-              onChange={e => setPasswordOds(e.target.value)} />
-            <Form.Input
-              fluid
-              icon='lock'
-              iconPosition='left'
-              placeholder='Nep Password'
-              value={passwordNep}
-              onChange={e => setPasswordNep(e.target.value)} />
+            <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password 1' value={password1}
+              onChange={e => setPassword1(e.target.value)} />
+            <Form.Input fluid icon='lock' iconPosition='left' placeholder='Password 2' value={password2}
+              onChange={e => setPassword2(e.target.value)} />
             <Button color='teal' fluid size='large' onClick={handleSubmit}>
               Connect
             </Button>
